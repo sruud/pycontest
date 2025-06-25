@@ -12,9 +12,12 @@ Dependencies:
 Tutorial requires Python 3.6, Matplotlib 3.0, Scipy, Numpy, Pytest and Hypothesis.
 To create example animations you may need ffmpeg or mencoder packages. 
 
-## Python Requirements:
+## How I set up my environments (2025)
 
-[![Python](https://img.shields.io/badge/python-3.6%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+This project now targets Python 3.9+. The dependencies have been consolidated into a single requirements.txt file for simplicity.
+
+
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 
 ### 1. Install ffmpeg and optionally Allure for checking out reports
 
@@ -60,16 +63,8 @@ python -m venv venv
 
 ### 3. Install Python dependencies
 
-**macOS**
-
 ```bash
-pip install -r mac-requirements.txt
-```
-
-**Windows**
-
-```powershell
-pip install -r win-requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 4. Try running the tests (before solving)
@@ -77,13 +72,13 @@ pip install -r win-requirements.txt
 **macOS**
 
 ```bash
-pytest -v tests/
+pytest -v -s tests/
 ```
 
 **Windows**
 
 ```powershell
-pytest -v .\tests
+pytest -v -s .\tests\
 ```
 
 ### 5. Work through the problems alongside the presentation
