@@ -1,0 +1,97 @@
+# make wiki | add to read me | idea -> blog about the experience 
+
+# Allure strategy
+
+# Goal: macOS runs the tests in order of the workshop showing past failures
+- upload results to gh-pages branch
+
+Q&A - Questions I had during the workshop and environment setup.
+
+gh-pages - how do I go about processing the files 
+-> github actions trigger tests and output the results on a specific branch such as
+the gh-pages branch only?
+
+# Docstrings - how they are used and what you can do with them (allure metadata)
+
+# perhaps a future commit I could do a round of improving descriptions and titles 
+# with copilot for better naming or test out cursor
+# and better understand the material I'm testing with 
+
+# Decorator Ordering
+# 1. Allure decorators (tags, title, description, severity)
+@allure.tag("transport", "regression")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.title("Verify transport behavior under condition X")
+@allure.description("This test validates the transport model with edge case inputs.")
+
+# 2. Pytest decorators (marks, parametrize, etc.)
+@pytest.mark.parametrize("input,expected", [...])
+@pytest.mark.slow
+
+# 3. The test function itself
+def test_transport_model(input, expected):
+
+--------------------------------------------------
+
+# Sorting imports
+# vscode extension (Microsoft) isort will organize and sort python imports correctly
+
+# vscode configurations and DX related
+# created a terminal alias for a and d -> to activate/deactivate venv environment
+# I can imagine that it wouldn't be too hard to script something if to auto create/and source the activate file
+
+# Python test setup in vscode env?
+# vscode cmd + shift + p Python: Configure Tests
+# Select a test framework/tool to enable -> pytest
+# Select the directory containing the tests -> tests (pycontest/tests/)
+I will set the tests to allure for my own learning and as the goal of seeing detailed results - getting better at working with errors
+
+# idea - research ai agents that analyze logs and errors from pytest reports
+-> Postive ROI on fixing broken tests and underlying code.
+
+# How do you hide __pycache__ files from vscode explorer?
+# How do you gray out .pyc files and/or just hide them?
+-> added .gitignore for now - visual feedback is better
+
+# Is it possible to collapse pytest and allure decorators from view when editing files by default?
+
+# Getting better at Git
+
+# Git Settings - rules
+# Only I have direct access by default but repo is public
+# Only I can contribute to this repository.  Now I know how and where to add collabs at least
+
+# Your master branch isn't protected - read more of the documentation
+# https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets
+
+# I hadn't come across the git switch option before - useful
+
+# Helpful to re-remember
+# git remote -vv
+# git fetch --all
+# git branch -r
+# git branch -a
+
+# Made my first mistake opening a PR on the upstream master of the fork -
+-> can be avoided using gh cli rather than opening PR on github site and selecting drop-downs
+
+
+# Github Actions
+# Allure - integration / Pytest?
+# add code coverage? What is the modern way people are doing this in 2025?
+
+
+# Misc Setup and further experimentation
+# uv and pixi - might be something to look into
+
+# General pytest refreshers
+
+# Best Practice: Testing one functionality per test 
+# assign a variable to the function your testing
+
+# creating a user with an email
+# then assert that the user property (user.email) equals
+# the expected email
+
+
+

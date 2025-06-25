@@ -1,0 +1,34 @@
+allure-results/
+# solution/
+.pytest_cache
+*.pyc
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.envrc
+.python-version
+
+# VSCode or JetBrains IDEs
+# I may want to upload this for now?
+# .vscode/
+.idea/
+*.sublime*
+
+# Pytest and Allure output
+htmlcov/
+.allure-results/
+.allure-report/
+
+# Logs and cache
+*.log
+.cache/
+
+# System files
+.DS_Store
+Thumbs.db
