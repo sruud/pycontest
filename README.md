@@ -83,20 +83,26 @@ pytest -v -s .\tests\
 
 ### 5. Work through the problems alongside the presentation
 
-### 6. Generate Allure Reports
-
-- You can also generate a visual report of this baseline using Allure
+### 6. Run Tests -> output results (Allure Reports)
 
 **macOS**
 
 ```bash
-pytest tests/ --alluredir allure-results
+pytest tests/allure/ --alluredir allure-results
 ```
 
 **Windows**
 
 ```powershell
-pytest .\tests --alluredir allure-results
+pytest .\tests\allure --alluredir allure-results
+```
+
+### 7. Generate a report for viewing
+Generate a report
+- You can also generate a visual report of this baseline using Allure
+
+```bash
+allure serve allure-results
 ```
 
 ## 💡 Key Takeaways

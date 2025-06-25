@@ -1,17 +1,17 @@
+import allure
 import numpy as np
 import pytest
-import allure
 from allure_commons.types import Severity
 
 from pycontest.transport import transport
 
-# @allure.title("Test transport (as {loc, vel, dt})")
+
+@allure.tag("transport", "modeling")
 @allure.title("Test transport function with expected initial values")
 @allure.description("""
     Testing the transport function with expected values of:
     initial location, velocity, and a time unit (delta time)
 """)
-@allure.tag("Transport", "Modeling")
 def test_transport_1():
     # allure.dynamic.tag("Transport") # run-time example instead of a decorator
     loc = 3.0
@@ -28,7 +28,7 @@ def test_transport_1():
 @allure.title("Test transport with arrays in two dimensions")
 @allure.description("""We want to check if it works for arrays with 2d""")
 def test_transport_2():
-    allure.dynamic.tag("Transport", "Modeling")
+    allure.dynamic.tag("transport", "modeling")
     
     loc = np.array([[1, 2], [11, 12]])
     vel = np.array([[1, 1], [-1, -1]])
@@ -50,7 +50,7 @@ def test_transport_2():
 # Example on how to use a decorator with a currently failing test
 # @pytest.mark.xfail(reason="doesn't work for arrays with dtype=int")
 def test_transport_3():
-    allure.dynamic.tag("Transport", "Modeling")
+    allure.dynamic.tag("transport", "modeling")
     
     loc = np.array([[1, 2], [11, 12]])
     vel = np.array([[1, 1], [-1, -1]])
@@ -63,7 +63,7 @@ def test_transport_3():
 @allure.title("Test transport with lists")
 @allure.description("""Lists as inputs for location and velocity""")
 def test_transport_4():
-    allure.dynamic.tag("Transport", "Modeling")
+    allure.dynamic.tag("transport", "modeling")
 
     loc = [[1, 2], [11, 12]]
     vel = [[1, 1], [-1, -1]]

@@ -1,9 +1,18 @@
-import pycontest
-from pycontest import simulation as sim2d
-import numpy as np                                                             
-import pytest
 import os
 
+import allure
+import numpy as np
+import pytest
+
+import pycontest
+from pycontest import simulation as sim2d
+
+
+@allure.tag("regression", "simulation")
+@allure.title("Test Regression")
+@allure.description("""
+   Regression test for the simulation with initial condition and params
+""")
 @pytest.mark.skip(reason="TODO")
 def test_regression():
 

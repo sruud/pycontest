@@ -1,11 +1,30 @@
-from pycontest import simulation as sim
-from pycontest.movies import Movie_2d
-
+import allure
 import numpy as np
 import pytest
 
+from pycontest import simulation as sim
+from pycontest.movies import Movie_2d
 
 
+@allure.tag("simulation", "mp4")
+@allure.title("Test Simulation function with expected initial values")
+# TODO: can you grab the docstring from the function I'm testing with allure?
+@allure.description("""
+    initial condition and simulation parameters
+                    
+    This test creates a movie.mp4
+    alculating positions and velocities of particles after one step
+
+    Arguments:
+        dt: time steps
+        mass: masses
+        radius: radius for all balls
+        loc: locations of balls
+        vel: 2d velocities of balls
+        domain: domain for the box
+    Returns:
+         positions and velocities of particles after one step
+""")
 def test_simulation_1():
     # initial condition and simulation parameters
     domain = ([-2, 12], [0, 3])

@@ -1,10 +1,17 @@
-from pycontest import simulation as sim
-from pycontest.utils import E_kin, momentum
-
+import allure
 import numpy as np
 import pytest
 
+from pycontest import simulation as sim
+from pycontest.utils import E_kin, momentum
 
+
+@allure.tag("simulation", "fixture")
+@allure.title("Test Simulation fixture example")
+# TODO: can you grab the docstring from the function I'm testing with allure?
+@allure.description("""
+    Fixture with initial condition and simulation parameters
+""")
 @pytest.fixture(scope="module")
 def data(request):
 
