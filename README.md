@@ -88,13 +88,13 @@ pytest -v -s .\tests\
 **macOS**
 
 ```bash
-pytest tests/allure/ --alluredir allure-results
+pytest tests/ --alluredir allure-results
 ```
 
 **Windows**
 
 ```powershell
-pytest .\tests\allure --alluredir allure-results
+pytest .\tests\ --alluredir allure-results
 ```
 
 ### 7. Generate a report for viewing

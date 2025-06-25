@@ -14,6 +14,7 @@ from pycontest.utils import E_kin, momentum
    Hypothisis test: TODO
 """)
 @pytest.mark.skip(reason="TODO")
+# TODO: Finish this test - hypothesis
 @given(mass1  = st.floats(min_value=.1, max_value=1e3),
        mass2  = st.floats(min_value=.1, max_value=1e3))
 def test_energy_hypothesis(mass1, mass2):

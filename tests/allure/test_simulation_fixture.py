@@ -6,12 +6,6 @@ from pycontest import simulation as sim
 from pycontest.utils import E_kin, momentum
 
 
-@allure.tag("simulation", "fixture")
-@allure.title("Test Simulation fixture example")
-# TODO: can you grab the docstring from the function I'm testing with allure?
-@allure.description("""
-    Fixture with initial condition and simulation parameters
-""")
 @pytest.fixture(scope="module")
 def data(request):
 
@@ -41,7 +35,14 @@ def data(request):
     request.addfinalizer(data_cleanup)
     return my_data
 
-
+@allure.tag("simulation", "fixture")
+@allure.title("Energy Test Simulation fixture example")
+# TODO: can you grab the docstring from the function I'm testing with allure?
+# I noticed std out is being grabbed by allure
+@allure.description("""
+    Fixture with initial condition and simulation parameters
+    Verify resulting energy value
+""")
 def test_energy(data):
 
     print("\n test energy")
@@ -51,6 +52,12 @@ def test_energy(data):
 
     assert E_ini == E_end
 
+@allure.tag("simulation", "fixture")
+@allure.title("Momentum Test Simulation fixture example")
+@allure.description("""
+    Fixture with initial condition and simulation parameters
+    Verify resulting momentum value
+""")
 def test_momentum(data):
 
     print("\n test momentum")
