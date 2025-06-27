@@ -1,3 +1,5 @@
+import os
+
 import allure
 import numpy as np
 import pytest
@@ -39,8 +41,17 @@ def test_simulation_1():
     loc, vel = sim.simulation(t_max, dt, mass, radius, loc_0, vel_0, domain)
 
     # creating a movie
+    movie_name = f"pytest_movie_1d_dt_{dt}"
+    movie_filename = f"{movie_name}.mp4"
+    movie_path = os.path.join(os.path.dirname(__file__), "..", "..", movie_filename)
+
     movie = Movie_2d(sim.simulation_step, dt, t_max - dt, loc, vel, domain, mass, radius)
-    movie.animate("pytest_movie_1d_dt_{}".format(dt))
+    # movie.animate("pytest_movie_1d_dt_{}".format(dt))
+    movie.animate(movie_name)
+
+    # Attach to the test report
+    with open(movie_path, "rb") as f:
+        allure.attach(f.read(), name="Simulation Video", attachment_type="video/mp4")
 
     # test location and velocities after collision
     assert loc[0][0] < 5
