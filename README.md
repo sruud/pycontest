@@ -69,17 +69,24 @@ pip install -r requirements.txt
 
 ### 4. Try running the tests (before solving)
 
-**macOS**
+- With `pytest.ini` now specifying the test path, you can simply run:
 
 ```bash
-pytest -v -s tests/
+pytest
 ```
 
-**Windows**
+This will discover and run the tests automatically.
 
-```powershell
-pytest -v -s .\tests\
+If you want more detailed output or need to see print/debug statements, you can use:
+
+```bash
+pytest -v -s
 ```
+
+- `-v`: verbose mode -- shows each test's name and status
+- `-s`: disables output capture =-- useful if you're using `print()` or `pdb`
+
+- You can still specify the test path as an argument `pytest tests/allure/`
 
 ### 5. Work through the problems alongside the presentation
 
